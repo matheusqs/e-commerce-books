@@ -1,0 +1,23 @@
+<form class="login-form" [formGroup]="loginForm">
+  <h3 class="form__title">E-Commerce Books</h3>
+
+  <mat-form-field appearance="fill" class="form__field">
+    <mat-label>Username</mat-label>
+    <input matInput formControlName="username" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form__field">
+    <mat-label>Password</mat-label>
+    <input matInput formControlName="password" />
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    class="form__button"
+    (click)="handleLoginClick()"
+    [disabled]="loginForm.invalid"
+  >
+    Log in
+  </button>
+</form>

@@ -1,0 +1,37 @@
+:host {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(12, 70px);
+  grid-template-areas: ". . . . login login login login . . . .";
+  align-items: center;
+  justify-content: center;
+
+  .login-form {
+    grid-area: login;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 56px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 24px;
+
+    .form__title {
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      margin: 0 0 32px 0;
+      font-size: 20px;
+      line-height: 22px;
+    }
+
+    .form__field {
+        width: 100%;
+    }
+
+    .form__button {
+        margin-top: 16px;
+        width: 100%;
+    }
+  }
+}
