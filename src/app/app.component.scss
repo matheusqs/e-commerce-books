@@ -1,0 +1,19 @@
+.mat-drawer-container {
+    height: 100vh;
+    width: 100vw;
+
+    .sidenav-content {
+        padding: 24px;
+        background-color: rgba(0, 102, 255, 0.7);
+
+        a {
+            display: flex;
+            padding: 8px 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            background-color: #0066ff;
+            margin-bottom: 8px;
+        }
+    }
+}

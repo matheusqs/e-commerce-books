@@ -5,19 +5,32 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatIconModule} from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 import { FormBuilder } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomepageComponent } from './homepage/homepage.component';
+import { StoreModule } from '@ngrx/store';
+import { sidenavReducer } from '../app/core/store/sidenav.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { MenuButtonComponent } from './shared/menu-button/menu-button.component';
+import { BookCardComponent } from './shared/book-card/book-card.component';
+import { CreateBookComponent } from './create-book/create-book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomepageComponent
+    HomepageComponent,
+    NavbarComponent,
+    MenuButtonComponent,
+    BookCardComponent,
+    CreateBookComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,9 +40,15 @@ import { HomepageComponent } from './homepage/homepage.component';
     MatFormFieldModule,
     MatIconModule,
     MatButtonModule,
-    ReactiveFormsModule
+    MatSidenavModule,
+    ReactiveFormsModule,
+    StoreModule.forRoot({ sidenav: sidenavReducer }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
   ],
   providers: [FormBuilder],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,0 +1,46 @@
+:host {
+  background: rgba(0, 102, 255, 0.7);
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 16px;
+
+  .nav-bar-search {
+    flex-basis: 50%;
+    display: flex;
+
+    .search__input {
+      flex: 1;
+      padding: 0 24px;
+      border: 0;
+      border-radius: 5px 0 0 5px;
+      color: #3a3a3a;
+
+      &::placeholder {
+        color: #a8a8b3;
+      }
+    }
+
+    .search__button {
+      flex-basis: 56px;
+      background-color: #0066ff;
+      border-radius: 0 5px 5px 0;
+      color: white;
+    }
+  }
+
+  .navbar__perfil {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    border: none;
+
+    img {
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+    }
+  }
+}

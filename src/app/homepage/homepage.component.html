@@ -1,6 +1,24 @@
-<div class="homepage-navbar">
-   
-</div>
-<section>
-
+<app-navbar></app-navbar>
+<section class="homepage">
+  <section class="homepage-advertising">Anúncio</section>
+  <section class="homepage-content">
+    <section class="content-filter">
+      <h3>Filtros</h3>
+      <mat-form-field appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Preço</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>ISBN</mat-label>
+        <input matInput />
+      </mat-form-field>
+    </section>
+    <section class="content-books">
+      <app-book-card *ngFor="let book of books"></app-book-card>
+    </section>
+  </section>
 </section>

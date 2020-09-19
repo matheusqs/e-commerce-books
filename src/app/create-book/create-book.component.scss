@@ -1,0 +1,23 @@
+.content {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: calc(100% - 72px);
+
+    .form {
+        padding: 48px;
+        min-width: 600px;
+        width: 50vw;
+        background-color: rgba(0, 0, 0, 0.05);
+
+        * {
+            width: 100%;
+        }
+
+        button {
+            background-color: #0066ff;
+            color: white;
+            margin-top: 32px;
+        }
+    }
+}
