@@ -1,0 +1,9 @@
+<app-navbar></app-navbar>
+<section class="container-cart">
+  <section *ngFor="let book of cartService.books">
+    <img [src]="book.uri" />
+    <h1>{{ book.name }}</h1>
+    <h1>{{ book.price }}</h1>
+  </section>
+  <button mat-raised-button color="primary" routerLink="/homepage">COMPRAR {{ total }}</button>
+</section>

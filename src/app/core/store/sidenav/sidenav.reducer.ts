@@ -3,7 +3,6 @@ import { open, close } from './sidenav.actions';
 
 export const initialState = false;
 
-// tslint:disable-next-line: variable-name
 const _sidenavReducer = createReducer(
   initialState,
   on(open, () => true),

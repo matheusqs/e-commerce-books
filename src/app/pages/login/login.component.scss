@@ -7,8 +7,11 @@
   grid-template-areas: ". . . . login login login login . . . .";
   align-items: center;
   justify-content: center;
+  background: url('https://ak.picdn.net/shutterstock/videos/23163634/thumb/1.jpg') no-repeat;
+  background-size: cover;
 
   .login-form {
+    background: white;
     grid-area: login;
     display: flex;
     flex-direction: column;
@@ -16,6 +19,7 @@
     padding: 56px;
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 24px;
+    box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.24);
 
     .form__title {
       font-family: Arial, sans-serif;

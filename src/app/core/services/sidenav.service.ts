@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { close, open } from '../store/sidenav.actions';
+import { close, open } from '../store/sidenav/sidenav.actions';
 
 @Injectable({
   providedIn: 'root',

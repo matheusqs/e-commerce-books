@@ -1,6 +1,5 @@
 <app-navbar></app-navbar>
 <section class="homepage">
-  <section class="homepage-advertising">Anúncio</section>
   <section class="homepage-content">
     <section class="content-filter">
       <h3>Filtros</h3>
@@ -18,7 +17,7 @@
       </mat-form-field>
     </section>
     <section class="content-books">
-      <app-book-card *ngFor="let book of books"></app-book-card>
+      <app-book-card *ngFor="let book of books" [book]="book"></app-book-card>
     </section>
   </section>
 </section>

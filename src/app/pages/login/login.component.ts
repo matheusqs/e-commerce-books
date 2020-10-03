@@ -17,7 +17,7 @@ export class LoginComponent {
     });
   }
 
-  public handleLoginClick() {
+  public handleLoginClick(): void {
     const { username, password } = this.loginForm.value;
 
     if (username === 'admin' && password === '123') {

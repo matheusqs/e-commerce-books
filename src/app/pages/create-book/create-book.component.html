@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<section class="content">
+    <form [formGroup]="createBook" class="form">
+        <h1>Cadastrar Livro</h1>
+        <mat-form-field appearance="fill" >
+            <mat-label>Nome</mat-label>
+            <input matInput formControlName="name"/>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Preço</mat-label>
+            <input matInput type="number" formControlName="price"/>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>ISBN</mat-label>
+            <input matInput formControlName="isbn"/>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>URL</mat-label>
+            <input matInput formControlName="uri"/>
+        </mat-form-field>
+
+        <button mat-flat-button (click)="handleCreateBookButton()" routerLink="/homepage">CADASTRAR</button>
+    </form>
+</section>
