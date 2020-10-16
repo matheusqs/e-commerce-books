@@ -4,5 +4,5 @@ export interface Book {
   isbn: string;
   price: number;
   uri: string;
-  quantity: number;
+  quantity?: number;
 }
