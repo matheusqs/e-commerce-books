@@ -4,6 +4,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { CreateBookComponent } from './pages/create-book/create-book.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { LoginComponent } from './pages/login/login.component';
+import { SearchBooksComponent } from './pages/search-books/search-books.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartComponent,
+  },
+  {
+    path: 'search',
+    component: SearchBooksComponent,
   },
 ];
 

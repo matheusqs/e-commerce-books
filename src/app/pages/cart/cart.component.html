@@ -1,9 +1,43 @@
 <app-navbar></app-navbar>
 <section class="container-cart">
-  <section *ngFor="let book of cartService.books">
-    <img [src]="book.uri" />
-    <h1>{{ book.name }}</h1>
-    <h1>{{ book.price }}</h1>
+  <section class="cart-book" *ngFor="let book of cartService.books">
+    <img class="book__image" [src]="book.uri" />
+    <div class="book-details">
+      <h3 class="details__name">{{ book.name }}</h3>
+    </div>
+    <div class="book-info">
+      <strong class="info__price">{{ formatCurrency(book.price) }}</strong>
+      <button
+        mat-icon-button
+        color="warn"
+        (click)="handleRemoveBookClick(book.id)"
+      >
+        <mat-icon>remove_shopping_cart</mat-icon>
+      </button>
+      <div class="info-quantity">
+        <button mat-icon-button (click)="handleRemoveBookClick(book.id)">
+          <mat-icon>remove</mat-icon>
+        </button>
+        <span class="quantity__value">{{ book.quantity }}</span>
+        <button mat-icon-button (click)="handleAddBookClick(book)">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </div>
   </section>
-  <button mat-raised-button color="primary" routerLink="/homepage">COMPRAR {{ total }}</button>
+  <ng-container *ngIf="cartService.books.length === 0">
+    <mat-icon class="cart__icon">shopping_cart</mat-icon>
+    <h2 class="cart__empty-message">
+      Seu carrinho está vazio! Adicione livros para continuar com a compra.
+    </h2>
+  </ng-container>
+  <button
+    mat-raised-button
+    color="primary"
+    routerLink="/homepage"
+    [disabled]="cartService.books.length === 0"
+    class="cart__button"
+  >
+    COMPRAR {{ total }}
+  </button>
 </section>

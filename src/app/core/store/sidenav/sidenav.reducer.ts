@@ -9,6 +9,6 @@ const _sidenavReducer = createReducer(
   on(close, () => false)
 );
 
-export function sidenavReducer(state, action): boolean {
+export function reducer(state, action): boolean {
   return _sidenavReducer(state, action);
 }

@@ -40,6 +40,11 @@
   }
 
   .content__button {
+    display: flex;
     margin-top: auto;
+
+    .button__icon {
+      margin-right: 8px;
+    }
   }
 }

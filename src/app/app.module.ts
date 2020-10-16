@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -13,7 +12,7 @@ import { FormBuilder } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { StoreModule } from '@ngrx/store';
-import { sidenavReducer } from './core/store/sidenav/sidenav.reducer';
+import * as fromSidenav from './core/store/sidenav/sidenav.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -22,6 +21,8 @@ import { MenuButtonComponent } from './shared/menu-button/menu-button.component'
 import { BookCardComponent } from './shared/book-card/book-card.component';
 import { CreateBookComponent } from './pages/create-book/create-book.component';
 import { CartComponent } from './pages/cart/cart.component';
+import * as fromCart from './core/store/cart/cart.reducer';
+import { SearchBooksComponent } from './pages/search-books/search-books.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { CartComponent } from './pages/cart/cart.component';
     BookCardComponent,
     CreateBookComponent,
     CartComponent,
+    SearchBooksComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,7 @@ import { CartComponent } from './pages/cart/cart.component';
     MatButtonModule,
     MatSidenavModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({ sidenav: sidenavReducer }),
+    StoreModule.forRoot({ sidenav: fromSidenav.reducer, cart: fromCart.reducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
