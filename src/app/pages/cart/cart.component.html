@@ -7,13 +7,6 @@
     </div>
     <div class="book-info">
       <strong class="info__price">{{ formatCurrency(book.price) }}</strong>
-      <button
-        mat-icon-button
-        color="warn"
-        (click)="handleRemoveBookClick(book.id)"
-      >
-        <mat-icon>remove_shopping_cart</mat-icon>
-      </button>
       <div class="info-quantity">
         <button mat-icon-button (click)="handleRemoveBookClick(book.id)">
           <mat-icon>remove</mat-icon>
