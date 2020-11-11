@@ -1,0 +1,39 @@
+{
+  "books": [
+    {
+      "name": "Mais esperto que o diabo",
+      "price": 30,
+      "isbn": "1",
+      "uri": "https://images-na.ssl-images-amazon.com/images/I/71RkRMu5tAL.jpg",
+      "id": 1
+    },
+    {
+      "name": "O nome do vento",
+      "price": 60,
+      "isbn": "2",
+      "uri": "https://images-na.ssl-images-amazon.com/images/I/91Tb8yIdRML.jpg",
+      "id": 2
+    },
+    {
+      "name": "O temor do sábio",
+      "price": 40,
+      "isbn": "3",
+      "uri": "https://images-na.ssl-images-amazon.com/images/I/51YG16TP6LL._SX346_BO1,204,203,200_.jpg",
+      "id": 3
+    },
+    {
+      "name": "Sprint",
+      "price": 20,
+      "isbn": "3",
+      "uri": "https://images-na.ssl-images-amazon.com/images/I/512V+zNxQ9L._SX327_BO1,204,203,200_.jpg",
+      "id": 4
+    },
+    {
+      "name": "Domain Driven Design",
+      "price": 50,
+      "isbn": "4",
+      "uri": "https://images-na.ssl-images-amazon.com/images/I/51sZW87slRL.jpg",
+      "id": 5
+    }
+  ]
+}
