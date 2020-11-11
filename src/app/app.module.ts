@@ -23,6 +23,9 @@ import { CreateBookComponent } from './pages/create-book/create-book.component';
 import { CartComponent } from './pages/cart/cart.component';
 import * as fromCart from './core/store/cart/cart.reducer';
 import { SearchBooksComponent } from './pages/search-books/search-books.component';
+import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './core/services/auth.service';
 
 @NgModule({
   declarations: [
@@ -38,21 +41,26 @@ import { SearchBooksComponent } from './pages/search-books/search-books.componen
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(), // ToastrModule added
     MatInputModule,
     MatFormFieldModule,
     MatIconModule,
     MatButtonModule,
     MatSidenavModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({ sidenav: fromSidenav.reducer, cart: fromCart.reducer }),
+    StoreModule.forRoot({
+      sidenav: fromSidenav.reducer,
+      cart: fromCart.reducer,
+    }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
     }),
   ],
-  providers: [FormBuilder],
+  providers: [FormBuilder, AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

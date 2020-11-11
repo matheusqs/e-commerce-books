@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Book } from 'src/app/core/models/book';
 import { CartService } from 'src/app/core/services/cart.service';
 
@@ -12,7 +13,10 @@ export class BookCardComponent implements OnInit {
   public book: Book;
   public bookPrice = '';
 
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService,
+    private toastr: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.bookPrice = new Intl.NumberFormat('pt-BR', {
@@ -23,5 +27,6 @@ export class BookCardComponent implements OnInit {
 
   handleAddCartClick(): void {
     this.cartService.addBook(this.book);
+    this.toastr.success(`Adicionado ao carrinho com sucesso!`);
   }
 }

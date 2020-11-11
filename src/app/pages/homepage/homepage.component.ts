@@ -14,7 +14,7 @@ export class HomepageComponent implements OnInit, OnDestroy {
 
   constructor(private bookService: BooksService) {
     this.subscriptions = [
-      this.bookService.books$.subscribe((books) => (this.books = books)),
+      this.bookService.getAll().subscribe((books) => (this.books = books)),
     ];
   }
 
